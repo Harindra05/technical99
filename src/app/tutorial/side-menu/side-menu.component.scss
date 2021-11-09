@@ -1,0 +1,48 @@
+.side-nav-container{
+    padding: 4rem 10rem;
+    background-color: #c4c3d0;
+    .side-nav-heading{
+        text-align: center;
+        font-size: 2rem;
+        color: 002b5c;
+        padding-bottom: 3rem;
+    }
+    mat-toolbar {
+        background: #004a9f;
+        color: white;
+    }
+    .mat-drawer-content {
+        background-color: cadetblue;
+    }
+    mat-sidenav {
+        width: 30rem;
+        background: #002b5c;
+        color: white;
+        text-align: center;
+    }
+    
+    .content {
+        display: block;
+        font-size: 2rem;
+        color: lightgray;
+        box-shadow: none;
+        width: 90%;
+        .menu-tech-cards{
+            height: 5rem;
+            width: 14rem;
+            background-color: #fff;
+            border-radius: 3px;
+            margin: 0 2rem 2rem 0;
+            display: inline-block;
+            text-align: center;
+            padding: .6rem 0;
+        }
+    }
+    
+    mat-sidenav-container {
+        height: 40rem;
+        .active{
+            background-color: cadetblue;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg" class="primary-header" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand style="padding-left: 15px;"><a class="navbar-brand" href="#">
+      <img src="../../../assets/technical99.png" style="width: 19rem;height: 4.8rem;"> 
+    </a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto" >
+        <li class="nav-item header-list">
+          <a class="nav-link" >
+            <mdb-icon fas icon="home" class='header-icon'></mdb-icon>
+            <span class="header-cat-text" style="font-size: 1.4rem;" >Categories</span>
+          </a>
+        </li>  
+      </ul>
+      <!-- Links -->
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+            
+        <li class="nav-item header-list">
+            <button mdbBtn class="header-button" type="button" color="green" style="margin-bottom: 1.1rem;font-size: 1.1rem;border-radius: 4px;box-shadow: none;text-transform: none;margin-right: 4rem;" mdbWavesEffect>Talk to Expert</button>    
+        </li>
+        
+        <li class="nav-item header-list">
+          <a class="nav-link header-links" >
+            <mdb-icon fas icon="home" class='header-icon'></mdb-icon>
+            <span class="header-text">Home</span>
+          </a>
+        </li>
+        <li class="nav-item header-list">
+          <a class="nav-link header-links" >
+            <mdb-icon fas icon="university" class='header-icon'></mdb-icon>
+            <span class="header-text">Live Training</span>
+          </a>
+        </li>
+        <li class="nav-item header-list">
+          <a class="nav-link header-links" >
+            <mdb-icon fas icon="video" class='header-icon'></mdb-icon>
+            <span class="header-text">Videos</span>
+          </a>
+        </li>
+        <li class="nav-item header-list">
+          <a class="nav-link header-links" >
+            <mdb-icon fas icon="bell" class='header-icon'></mdb-icon>
+            <span class="header-text">Notification</span>
+          </a>
+        </li>
+        
+        <li class="nav-item header-list">
+          <a class="nav-link header-links" mdbDropdown>
+            
+              <mdb-icon fas icon="user" class='header-icon' mdbDropdownToggle></mdb-icon>
+              <span class="header-text">Login</span>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary" style="width:23rem"> 
+                <a class="dropdown-item" href="#">
+                  <li class="nav-item header-list" style="padding: 0;">
+                    <button mdbBtn class="header-button" type="button" color="success" style="margin: 0;font-size: 1.33rem;width: 16.16rem;height: 3.33rem;border-radius: 2px;text-transform: none;    line-height: 1.33rem;box-shadow: none;" mdbWavesEffect>Login</button>    
+                </li>
+                </a>
+                <a class="dropdown-item" href="#" style="color: blue;">Don't have an account? SignUp</a>
+                <a class="dropdown-item" href="#" >Dashboard</a>
+                <a class="dropdown-item" href="#" >User Profile</a>
+                <a class="dropdown-item" href="#" >Quiz's Report</a>
+                <a class="dropdown-item" href="#" >Bookmarks</a>
+                <a class="dropdown-item" href="#" >My Course</a>
+                <a class="dropdown-item" href="#" >My Subscription</a>
+                <!-- <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a> -->
+              </div>
+            
+          </a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->

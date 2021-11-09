@@ -1,0 +1,141 @@
+<div class="container-trending">
+  <div>
+    <span class="trending-title">Trending Courses</span>
+  </div>
+  <div style="margin-top:2rem;display: flex;">
+    <div>
+      <mat-tab-group>
+        <mat-tab label="All" style="min-width: auto;">
+          <mdb-carousel class="carousel slide carousel-slide" [animation]="'slide'">
+            <mdb-carousel-item>
+              <div class="view w-100" style="padding: 1rem 10rem 1rem 15rem;">
+                <div class="trending-cards container" *ngFor="let item of trendingCourses; let i = index">
+                  <div id="grad1">
+                    <div class="trending-cards-icon">
+                      <mdb-icon fab icon="java" style="font-size:3rem;"></mdb-icon>
+                    </div>
+                    <div class="trending-cards-title">
+                      <span class="card-heading">
+                        {{item.courseName}}
+                      </span>
+                    </div>
+  
+                  </div>
+                  <div style="padding: 2rem;">
+                    <div style="font-size: 1.5rem;">
+                      {{item.title}}
+                    </div>
+                    <div style="padding-top: 1rem;">
+                      <mdb-icon style="padding-right:1rem ;" fas icon="user"></mdb-icon>
+                      <span>{{item.learners}}&nbsp; Learners</span><mdb-icon style="padding: 0 1rem 0 2rem;" fas icon="video"></mdb-icon><span>Live Class</span>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                          <li [ngClass]="{'selected': (star <= item.rating)}">
+                            <i class="fa fa-star"></i>
+                          </li>
+                          
+                        </ul>
+                        <ul class="list-inline rating-list" style="display: inline-block">
+                          <li>
+                            <span style="padding-left: 1rem;color: black;"> {{item.rating}} ({{item.ratingCount}})</span>
+                          </li>
+                          
+                        </ul>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="overlay">
+                    <div >
+                      <mdb-icon far icon="heart" style="float: right;color: white;font-size: 3rem;padding: 1rem;"></mdb-icon>
+                    </div>
+                   
+                    <div style="font-size: 1.5rem;font-style: italic; display: block;color: #fff;padding: 1rem;margin-top: 4rem;">
+                      Next batch
+                    </div>
+                    <div style="font-size: 1rem;display: block;color: #fff;padding: 1rem 0 0 1rem;">
+                      {{item.batch.startDate |  date}} &nbsp; - {{item.batch.remDays}} &nbsp; days remaining
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+  
+            </mdb-carousel-item>
+          </mdb-carousel>
+        </mat-tab>
+        <mat-tab label="" style="min-width: auto; padding-right: 1rem;"
+          *ngFor="let menu of menus | slice:0:6; let i=index">
+          <ng-template mat-tab-label>
+            <span (click)="changeCategory(menu.categoryId)">{{menu.name}}</span>
+        </ng-template>
+          <mdb-carousel class="carousel slide carousel-slide" [animation]="'slide'">
+            <mdb-carousel-item>
+              <div class="view w-100" style="padding: 1rem 10rem 1rem 15rem;">
+                <div class="trending-cards container" *ngFor="let item of trendingCourses; let i = index">
+                  <div id="grad1">
+                    <div class="trending-cards-icon">
+                      <mdb-icon fab icon="java" style="font-size:3rem;"></mdb-icon>
+                    </div>
+                    <div class="trending-cards-title">
+                      <span class="card-heading">
+                        {{item.courseName}}
+                      </span>
+                    </div>
+  
+                  </div>
+                  <div style="padding: 2rem;">
+                    <div style="font-size: 1.5rem;">
+                      {{item.title}}
+                    </div>
+                    <div style="padding-top: 1rem;">
+                      <span>{{item.learners}}&nbsp; Learners</span><span style="padding: 0 2rem;">Live Class</span>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                          <li [ngClass]="{'selected': (star <= item.rating)}">
+                            <i class="fa fa-star"></i>
+                          </li>
+  
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="overlay">
+                    <span>Hello.</span>
+                  </div>
+                </div>
+              </div>
+  
+            </mdb-carousel-item>
+  
+  
+          </mdb-carousel>
+        </mat-tab>
+       
+          
+            
+       
+       
+      </mat-tab-group>
+    </div>
+    <!-- <div style="width: auto;height: 3rem;">
+      </a>
+      <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu1">
+        <div *ngFor="let menu of menus; let j=index">
+          <a class="dropdown-item waves-light" mdbWavesEffect> {{ menu.name }}</a>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div style="text-align: center;">
+    <a href="#">
+      <button mdbBtn class="header-button" type="button" color="success"
+        style="margin: 0;font-size: 1.33rem;width: 16.16rem;height: 3.33rem;border-radius: 2px;text-transform: none;    line-height: 1.33rem;box-shadow: none;"
+        mdbWavesEffect>Browse All Courses</button>
+    </a>
+  </div>
+</div>

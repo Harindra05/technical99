@@ -1,0 +1,46 @@
+.app-nav{
+    height: 3.4rem;
+    li{
+        a{
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: .03rem;
+        }
+    }
+    // .navbar-nav li:hover .dropdown-menu {
+    //     display: block;
+    // }
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+    .dropdown > .dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        pointer-events: none;
+    }
+    .nav-link:hover{
+        color: #fff !important;
+    }
+    .dropdown-menu{
+        padding-left: 1rem;
+        padding-top: 4px !important;
+        border-radius: 0;
+    }
+    .dropdown-item{
+        font-size: 1.2rem;
+        width: 15rem;
+    }
+    .dropdown-toggle::after {
+        display: none !important;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+    }
+    .active{
+        background-color: orange;
+        padding: .5rem;
+    }
+}

@@ -1,0 +1,73 @@
+<app-primary-header></app-primary-header>
+<app-secondary-header></app-secondary-header>
+<div class="tutorial-main-container">
+  <div class="col-lg-3" style="border: 1
+  px
+   solid #e2e2e2;">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="border: 1px solid brown;">
+        <mat-expansion-panel-header style="background-color: #e2e2e2;border-bottom: 1px solid brown;">
+          <mat-panel-title>
+            Java
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor='let topic of technology' (click)='getTopics(topic.techId)'>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{topic.techName}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor='let page of pages;' (click)='getPageLinks(page.topicId);$event.stopPropagation();'>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{page.topicName}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>
+                 <li *ngFor='let i of pagedata'>
+                   {{i.urltitle}}
+                 </li>
+                 
+                </p>
+              </mat-expansion-panel>
+            </p>
+          </mat-expansion-panel>
+        </p>
+      </mat-expansion-panel>
+     
+    </mat-accordion>
+  </div>
+  <div class="col-lg-7" >
+    <div style="border: 1px solid #e2e2e2">
+      <div style="display: flex;width:50rem; margin: auto;padding: 10rem 0;">
+        <mdb-icon fab icon="java" style="font-size:2.5rem;position: absolute;padding:.5rem 1rem"></mdb-icon>
+        <input mdbInput type="text"
+          style="margin: 0 !important;width: 50rem;height: 4rem;padding: 0 4rem;border-radius: 0;"
+          class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter course Category or Keyword">
+        <div class="icon-span">
+          <mdb-icon fas class="search-icon" icon="search"></mdb-icon>
+        </div>
+      </div>
+    </div>
+   
+    <div class="technology-container">
+      <div style="margin: 2rem;">
+        Java Technologies
+      </div>
+      <div class="language-topics">
+        <div class="language-icons" style="display: block;width: 100%;">
+          <div *ngFor='let topic of technology' style="display: inline-block; width: 16%;margin: 1rem 0;text-align: center;">
+            <mdb-icon fab icon="java" style="font-size:3rem;" ></mdb-icon>
+            <div style="padding-top: 1rem;">{{topic.techName}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2" style="border: 1px solid #e2e2e2;margin-left: 1rem;">
+    Blogs
+  </div>
+</div>
+<app-side-menu></app-side-menu>

@@ -1,0 +1,65 @@
+.language-list-container{
+    padding: 2rem;
+    .breadcrumb-custom{
+        color: #2053a9;
+    }
+    .language-list{
+        padding: 2rem;
+        .language-heading{
+            text-align: center;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+    }
+    .language-options{
+        justify-content: center;
+        display: flex;
+        .language-options-button-group{
+           
+            font-size: 1.5rem !important;
+        }
+        .language-options-buttons{
+            background-color: #fff !important;
+            color: black !important;
+            box-shadow: none !important;
+            padding: 1rem;
+            border: 1px solid #e2e2e2;
+            margin-right: 1rem;
+            width: 10%;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            .circle{
+                height: 1.5rem;
+                width: 1.5rem;
+                background-color: #fff;
+                border-radius: 50%;
+                display: inline-block;
+                border: 1px solid #e2e2e2;
+                margin-right: 1rem;
+            }
+        }
+    }
+    .language-icons-cards{
+        padding: 2rem 14rem;
+        display: block;
+        justify-content: center;
+        .language-list-icons{
+            
+            padding-top: 1rem;
+            display: block;
+            .language-card{
+                width: 10rem;
+                border: 1px solid #e2e2e2;
+                height: 10rem;
+                border-radius: 3px;
+                text-align: center;
+                padding: 1rem;
+                margin: 0 2rem 2rem 0;
+                position: relative;
+                display: inline-block;
+            }
+        }        
+    }
+}

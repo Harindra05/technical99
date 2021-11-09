@@ -1,0 +1,66 @@
+.tutorial-container{
+    background-color: #e2f8ff;
+    margin-top: 6rem;
+    //height: 50rem;
+    .tutorials-text{
+        font-size: 2.5rem;
+        text-align: center;
+        letter-spacing: .08rem;
+        padding: 5rem 3rem;
+    }
+    .tutorial-outer-card-left{
+        float: right;
+        height: 15rem;
+        width: 80%;
+        background-color: #fff;
+        border: 1px solid #c9eeff;
+        border-radius: 3px;
+        margin-right: 1rem;
+        margin-bottom: 2rem;
+    }
+   
+    .tutorial-outer-card-right{
+        // float: right;
+        height: 15rem;
+        width: 80%;
+        background-color: #fff;
+        border-radius: 2px;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+    }
+    .category-text{
+        text-align: initial;
+        padding:  1rem 1.5rem 2rem 1.5rem ;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #414040;
+        background-color: #faf9f9;
+        text-transform: capitalize !important;
+    }
+    .language-icons{
+        padding: 0 0 0 1rem;
+        display: flex;
+    }
+    .dot {
+        height: 1rem;
+        width: 1rem;
+         margin: 1rem;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    .module-navigation{
+        padding: 0 2rem;
+        color: coral;
+        background: transparent;
+        border: none;
+        font-size: 3rem;
+    }
+    .active{
+        background-color: orange;
+    }
+    :disabled {
+        pointer-events: none !important;
+        color: #e2e2e2;
+    }
+}

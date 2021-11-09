@@ -1,0 +1,44 @@
+<div *ngFor='let module of totalModules;let j = index'>
+  <div class="tutorial-container">
+    <div class="tutorials-text" *ngIf='j===ativeModule'>
+      <button class="module-navigation" (click)='getActiveModule("left",j,j+1)' [disabled]='j==0'> &#9664;</button>
+      {{module.moduleName}}
+      <button class="module-navigation" (click)='getActiveModule("right",j,j+1)' [disabled]='j==(totalModules.length-1)'> &#9654;</button>
+    </div>
+    <div style="display: flex;"  *ngIf='j===ativeModule'>
+      <div style="width: 50%;">
+        <div *ngFor='let category of data; let i = index'>
+          <div class="tutorial-outer-card-left" *ngIf='i===0 || i % 2===0'>
+            <div class="category-text" >
+              {{category.name}}
+            </div>
+            <div class="language-icons">
+              <div style="width: 20%; text-align: center;" *ngFor='let language of category.languages' routerLink="/{{ language.langName }}/tutorial" routerLinkActive="active">
+                <mdb-icon fab icon="java" style="font-size:3rem;"></mdb-icon>
+                <div style="padding-top: 1rem;">{{language.langName}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 50%;">
+        <div *ngFor='let category of data; let i = index' class="trial">
+          <div class="tutorial-outer-card-right" *ngIf='i%2!=0'>
+            <div class="category-text">
+              {{category.name}}
+            </div>
+            <div class="language-icons">
+              <div style="width: 20%; text-align: center;" *ngFor='let language of category.languages' routerLink="/{{ language.langName }}/tutorial" routerLinkActive="active">
+                <mdb-icon fab icon="java" style="font-size:3rem;"></mdb-icon>
+                <div style="padding-top: 1rem;">{{language.langName}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center" *ngIf='j===ativeModule'> 
+      <span class="dot" *ngFor='let tutorial of totalModules;let m = index' [ngClass]=" m===ativeModule ? 'active' : 'inactive'"></span>
+    </div>
+  </div>
+</div>

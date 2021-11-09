@@ -1,0 +1,44 @@
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-primary app-nav"  [containerInside]="false">
+    <mdb-navbar-brand style="height: 3rem;padding: 0;"><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto" style="width: 96%;" *ngIf='isHomePage'>
+        <li class="nav-item dropdown" dropdown *ngFor="let group of menu;let i = index" style="margin-right: 2rem;">
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect *ngIf='i<7' >
+            {{ group.name }}
+            <!-- <span class="caret"></span> -->
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" >
+            <a class="dropdown-item waves-light" style="font-size: 1.2rem;width: 15rem;" mdbWavesEffect *ngFor="let language of group.languages" routerLink="/{{ language.langName }}"  routerLinkActive="active">{{language.langName}}</a>
+            <!-- <div class="divider dropdown-divider"></div> -->
+            <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto" *ngIf='isHomePage'>
+        <li class="nav-item dropdown" dropdown >
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect >
+            <mdb-icon fas icon="bars" style="font-size: 2rem;"></mdb-icon>
+            <!-- <span class="caret"></span> -->
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" style="left: -7rem" >
+            <div *ngFor="let group of menu;let j = index" >
+              <a class="dropdown-item waves-light" mdbWavesEffect *ngIf='j>6'> {{ group.name }}</a>
+            </div>
+            
+
+            <!-- <div class="divider dropdown-divider"></div> -->
+            <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a> -->
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto" *ngIf='!isHomePage'>
+        <li class="nav-item dropdown active" style="margin: 0 1rem;color: #fff;" >
+          Home
+        </li>
+        <li *ngFor='let module of data' class="nav-item dropdown" style="margin: 0 1rem;color: #fff;padding-top: .5rem;">
+          {{module.moduleName}}
+        </li>
+      </ul>
+    </links>
+</mdb-navbar>

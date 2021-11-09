@@ -1,0 +1,27 @@
+<div class="side-nav-container">
+  <div class="side-nav-heading">
+      Switch to Other Technology
+  </div>
+
+  <mat-sidenav-container>
+    <mat-sidenav class="mat-elevation-z8">
+      <div *ngFor='let group of menu;let m = index' [ngClass]=" m===activeMenu ? 'active' : 'inactive'" (click)='changeMenu(m)' style="padding: 1rem 0;"> 
+        <span mat-button class="menu-button" >
+            <span>{{group.name}}</span>
+        </span>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8" style="padding: 3rem  10rem 0 10rem;" *ngIf='activeStack.length>0'>
+       
+        <div class="menu-tech-cards" *ngFor='let tech of activeStack'>
+          <mdb-icon fab icon="java" style="font-size:3rem;margin-right: 1rem;color: black;"></mdb-icon>  
+          <span style="color: black;font-size: 1rem">
+            {{tech.langName}}
+          </span>
+        </div>       
+       
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

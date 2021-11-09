@@ -1,0 +1,37 @@
+.tutorial-main-container{
+    margin: 1rem;
+    display: flex;
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+        box-shadow: none;
+        
+    }
+    .mat-expansion-panel-header{
+      padding: 0 1rem;
+      height: 3rem;
+      border-radius: 0;
+    }
+    .icon-span{
+        background-color: #006228!important;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 0 3px 3px 0;
+        display: flex;
+        align-items: center;
+        .search-icon{
+          font-size: 2rem;
+          padding: 0 0 0 .6rem;
+        }
+      }
+      .technology-container{
+          border: 1px solid #e2e2e2;
+          margin-top: 1rem;
+          .language-topics{
+              margin: 2rem;
+              width: 100%;
+              .language-icons{
+                padding: 0;
+                display: inline-block;
+            }
+          }
+      }
+}
