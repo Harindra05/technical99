@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { McqQuestionsComponent } from '../mcq/mcq-questions/mcq-questions.component';
 import { McqComponent } from '../mcq/mcq.component';
+import { QuizComponent } from '../quiz/quiz.component';
+import { QuizDetailsComponent } from '../quiz/quiz-details/quiz-details.component';
+
 
 const routes: Routes = [
   {
@@ -9,7 +12,13 @@ const routes: Routes = [
   },
   {
     path:'mcq-details',component:McqQuestionsComponent
-  }
+  },
+  {
+    path:'quiz', component:QuizComponent
+  },
+  {
+    path:'quiz-details',component:QuizDetailsComponent
+  },
 ];
 
 @NgModule({

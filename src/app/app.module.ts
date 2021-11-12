@@ -32,7 +32,9 @@ import { McqQuestionsComponent } from './mcq/mcq-questions/mcq-questions.compone
 import { CodeEditorModule } from '@ngstack/code-editor';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ToastrModule } from 'ngx-toastr';
-
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizDetailsComponent } from './quiz/quiz-details/quiz-details.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: ':lang', component: TutorialHomePageComponent },
@@ -55,12 +57,23 @@ const routes: Routes = [
     FaqsComponent,
     TutorialMainComponent,
     McqComponent,
-    McqQuestionsComponent
+    McqQuestionsComponent,
+    QuizComponent,
+    QuizDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HomeModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300
+    }),
     MDBBootstrapModule.forRoot(),
     FormsModule,
     MatTabsModule,
