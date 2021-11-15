@@ -1,5 +1,3 @@
-<app-primary-header></app-primary-header>
-<app-secondary-header></app-secondary-header>
 <div class="container-fluid py-3" id="quiz-container">
     <div class="row div-row">
         <div class="col-lg-12 ">
@@ -12,108 +10,112 @@
 
             </div>
         </div>
-        <div class="col-lg-9 px-0 mt-1">
-            <div class="bg-grey mx-3 py-2 mt-2 mb-2 d-flex justify-content-between">
-                <div>
-                    <span class="f-18 ml-3">Topic: Core Java - Collection</span>
+        <div class="col-lg-9 px-0">
+            <div class="border pr-3 mt-3" style="min-height: 100%;">
+                <div class="bg-grey mx-3 py-2 mt-2 mb-2 d-flex justify-content-between">
+                    <div>
+                        <span class="f-18 ml-3">Topic: Core Java - Collection</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <i class="fas fa-bookmark"></i><span class="f-18 ml-3 mr-5">Bookmark</span>
+                        <span class="f-18 ml-3">Marks:</span> <span class="f-18 ml-3 text-green">+3 &nbsp; | &nbsp;</span> <span class="f-18 ml-3 text-red">- 0.5</span>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <i class="fas fa-bookmark"></i><span class="f-18 ml-3 mr-5">Bookmark</span>
-                    <span class="f-18 ml-3">Marks:</span> <span class="f-18 ml-3 text-green">+3 &nbsp; | &nbsp;</span> <span class="f-18 ml-3 text-red">- 0.5</span>
-                </div>
-            </div>
-            <main class="main-contant mt-4">
-                <ng-container>
-                    <div class="row mt-2 ml-3">
-                        <div class="col-12 pr-3">
-                            <div class="row px-3">
-                                <div class="col-12">
-                                    <div class="question">
-                                        <p class="f-17 mb-4">Q.1 What is the output of following piece of Java code ?
-                                        </p>
+                <main class="main-contant mt-4 pb-4">
+                    <ng-container>
+                        <div class="row mt-2 ml-3">
+                            <div class="col-12 pr-3">
+                                <div class="row px-3">
+                                    <div class="col-12">
+                                        <div class="question">
+                                            <p class="f-17 mb-4">Q.1 What is the output of following piece of Java code ?
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
+                                <ngs-code-editor [theme]="theme" [codeModel]="model2" [options]="options" (valueChanged)="onCodeChanged($event)" [readOnly]=true>
+                                </ngs-code-editor>
                             </div>
-                            <ngs-code-editor [theme]="theme" [codeModel]="model2" [options]="options" (valueChanged)="onCodeChanged($event)" [readOnly]=true>
-                            </ngs-code-editor>
+                        </div>
+                    </ng-container>
+
+                    <div class="options-wrap mt-4">
+                        <div class="mt-5 pl-4 mb-2 ml-3">
+                            <span class="f-18 ml-3">Options :</span>
+                        </div>
+                        <div class="custom-radio">
+
+                            <ul>
+                                <li>
+                                    <input type="radio" id="f-option" name="selector">
+                                    <label for="f-option">8 X 0 = 8</label>
+
+                                    <div class="check"></div>
+                                </li>
+
+                                <li>
+                                    <input type="radio" id="s-option" name="selector">
+                                    <label for="s-option">Compilation error</label>
+
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <input type="radio" id="t-option" name="selector">
+                                    <label for="t-option">An exception thrown at runtime
+                            </label>
+
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="radio" id="option1" name="selector">
+                                    <label for="option1">All of these </label>
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="radio" id="option2" name="selector">
+                                    <label for="option2">None of these </label>
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="radio" id="option3" name="selector">
+                                    <label for="option3">thrUnpredictable output own </label>
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="radio" id="option4" name="selector">
+                                    <label for="option4">Successfully run </label>
+                                    <div class="check">
+                                        <div class="inside"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="action-div">
+                            <button class="btn btn-success  submit-btn px-5 mr-3 rounded" data-toggle="modal" data-target="#startQuiz">Submit</button>
+                            <button class="btn"> <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            Prev</button>
+                            <button class="btn"> Next <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
                         </div>
                     </div>
 
-                </ng-container>
-
-                <div class="options-wrap mt-4">
-                    <div class="mt-5 pl-4 mb-2 ml-3">
-                        <span class="f-18 ml-3">Options :</span>
-                    </div>
-                    <ul>
-                        <li>
-                            <input type="radio" id="f-option" name="selector">
-                            <label for="f-option">8 X 0 = 8</label>
-
-                            <div class="check"></div>
-                        </li>
-
-                        <li>
-                            <input type="radio" id="s-option" name="selector">
-                            <label for="s-option">Compilation error</label>
-
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <input type="radio" id="t-option" name="selector">
-                            <label for="t-option">An exception thrown at runtime
-                            </label>
-
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" id="option1" name="selector">
-                            <label for="option1">All of these </label>
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" id="option2" name="selector">
-                            <label for="option2">None of these </label>
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" id="option3" name="selector">
-                            <label for="option3">thrUnpredictable output own </label>
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="radio" id="option4" name="selector">
-                            <label for="option4">Successfully run </label>
-                            <div class="check">
-                                <div class="inside"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="text-right">
-                    <div class="action-div">
-                        <button class="btn btn-success  submit-btn rounded" data-toggle="modal" data-target="#startQuiz">Submit</button>
-                        <button class="btn"> <i class="fa fa-angle-left" aria-hidden="true"></i>
-                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                            Prev</button>
-                        <button class="btn"> Next <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </main>
+                </main>
+            </div>
         </div>
         <div class="col-lg-3  px-0 pl-3 mt-3">
             <div class="table-content text-center">
@@ -225,221 +227,6 @@
     </div>
 </div>
 
-<div class="other-technology mt-5 py-5 px-4 px-lg-5">
-    <span class="show-footer"></span>
-    <div class="container">
-        <div class="main-head text-center c-pointer d-block pb-4">
-            Switch to other technology
-        </div>
-        <div class="content mt-4">
-            <div class="row">
-                <div class="col-3">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link" id="v-pills-programming-tab" data-toggle="pill" href="#v-pills-programming" role="tab" aria-controls="v-pills-programming" aria-selected="false">Programming</a>
-                        <a class="nav-link" id="v-pills-algorithms-tab" data-toggle="pill" href="#v-pills-algorithms" role="tab" aria-controls="v-pills-algorithms" aria-selected="false">DS & Algorithms</a>
-                        <a class="nav-link" id="v-pills-ai-machine-tab" data-toggle="pill" href="#v-pills-ai-machine" role="tab" aria-controls="v-pills-ai-machine" aria-selected="false">AI & Machine Learning
-                        </a>
-                        <a class="nav-link active" id="v-pills-software-tab" data-toggle="pill" href="#v-pills-software" role="tab" aria-controls="v-pills-software" aria-selected="true">Software Testing </a>
-                        <a class="nav-link" id="v-pills-software-tab" data-toggle="pill" href="#v-pills-marketing" role="tab" aria-controls="v-pills-marketing" aria-selected="false">Digital Marketing </a>
-                        <a class="nav-link" id="v-pills-cloud-tab" data-toggle="pill" href="#v-pills-cloud" role="tab" aria-controls="v-pills-cloud" aria-selected="false">Cloud Computing </a>
-                        <a class="nav-link" id="v-pills-management-tab" data-toggle="pill" href="#v-pills-management" role="tab" aria-controls="v-pills-management" aria-selected="false">Project Management</a>
-                        <a class="nav-link" id="v-pills-science-tab" data-toggle="pill" href="#v-pills-science" role="tab" aria-controls="v-pills-science" aria-selected="false">Data Science & BI </a>
-                    </div>
-                </div>
-                <div class="col-9">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade " id="v-pills-programming" role="tabpanel" aria-labelledby="v-pills-programming-tab">
-                            <div class="row pt-2">
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon1.png" alt="icon1" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Selenium 465465465465
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon2.png" alt="icon2" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Ui Path
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon3.png" alt="icon3" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Automation Anywhere
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-algorithms" role="tabpanel" aria-labelledby="v-pills-algorithms-tab">
-                            algorithms</div>
-                        <div class="tab-pane fade" id="v-pills-ai-machine" role="tabpanel" aria-labelledby="v-pills-ai-machine-tab">
-                            machine</div>
-                        <div class="tab-pane fade show active" id="v-pills-software" role="tabpanel" aria-labelledby="v-pills-software-tab">
-                            <div class="row pt-2">
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon1.png" alt="icon1" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Selenium
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon2.png" alt="icon2" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Ui Path
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon3.png" alt="icon3" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Automation Anywhere
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-marketing" role="tabpanel" aria-labelledby="v-pills-marketing-tab">
-                            marketing</div>
-                        <div class="tab-pane fade" id="v-pills-software" role="tabpanel" aria-labelledby="v-pills-software-tab">
-                            software</div>
-                        <div class="tab-pane fade" id="v-pills-cloud" role="tabpanel" aria-labelledby="v-pills-cloud-tab">cloud
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-management" role="tabpanel" aria-labelledby="v-pills-management-tab">
-                            management</div>
-                        <div class="tab-pane fade" id="v-pills-science" role="tabpanel" aria-labelledby="v-pills-science-tab">
-                            <div class="row pt-2">
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon1.png" alt="icon1" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Selenium
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon2.png" alt="icon2" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Ui Path
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                        <div class="icon mr-3">
-                                            <img src="assets/images/icon3.png" alt="icon3" class="img-fluid" width="40">
-                                        </div>
-                                        <div class="content-info">
-                                            Automation Anywhere
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 my-2">
-                                    <div class="box-wrap p-3 d-flex align-items-center">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="modal" id="startQuiz" tabindex="-1" role="dialog" aria-labelledby="startQuizLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 400px;">
