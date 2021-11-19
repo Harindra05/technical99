@@ -65,13 +65,13 @@ body {
         -webkit-transition: background 0.25s linear;
     }
     input[type=radio]:checked~.check {
-        border: 2px solid #0DFF92;
+        border: 2px solid #00c851;
     }
     input[type=radio]:checked~.check::before {
-        background: #0DFF92;
+        background: #00c851;
     }
     input[type=radio]:checked~label {
-        color: #0DFF92;
+        color: #00c851;
     }
     .signature {
         margin: 10px auto;
@@ -193,6 +193,10 @@ body {
         flex: 0 0 60%;
         max-width: 60%;
     }
+    .width-80 {
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
 }
 
 .btn-poppy-red {
@@ -204,7 +208,7 @@ body {
 }
 
 .btn {
-    border: 1px solid #cccc !important;
+    border: 1px solid #cccc;
     box-shadow: none !important;
     &:hover {
         color: #fff;
@@ -212,7 +216,9 @@ body {
         border-color: #000;
     }
 }
-
+.bg-grey{
+    background-color: #e5e5e5;
+}
 .mat-tab-nav-bar,
 .mat-tab-header {
     border-bottom: none;
@@ -368,6 +374,39 @@ body {
             }
         }
     }
+}
+.dashboard-sidebar{
+    &.sidebar .accordion {
+        border: none;
+        .card .card-header .btn-link {
+                padding: 15px 10px 15px 1.25rem;
+                background-color: transparent;
+                border-width: 0 0px 1px 0 !important;
+                .icon-collapse{
+                    border: none;
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid #888;
+                    position: absolute;
+                    right: 0;
+                    transform: rotate(45deg);
+                    border-width: 0 1px 1px 0;
+                }
+                &[aria-expanded="true"] {
+                    .icon-collapse{
+                        border-width:1px  0  0 1px;
+                    }
+                }
+            }
+        }
+    .dotted-lines:after,.dotted-lines li:after{
+        display: none;
+    }
+}
+
+.dashboard-sidebar.sidebar .accordion .card .card-header .btn-link .icon-collapse::after,
+.dashboard-sidebar.sidebar .accordion .card .card-header .btn-link .icon-collapse::before{
+    display: none;
 }
 
 // middle-contant css
@@ -640,7 +679,7 @@ input.star-5:checked~label.star:before {
     top: 28%;
     -webkit-transform: translate(-50%, 0);
     left: 50%;
-    &.btn-success {
+    .btn-success {
         background-color: #00c851!important;
         color: #fff;
         width: 65px;
@@ -894,7 +933,13 @@ div#editor {
     color: #fff;
 }
 
-.btn:hover {
-    color: #fff !important;
-    background-color: #000 !important;
+// .btn:hover {
+//     color: #fff !important;
+//     background-color: #000 !important;
+// }
+.btn-orange{
+    background-color: #d86417;
+}
+.dashboard-main-contant{
+    
 }

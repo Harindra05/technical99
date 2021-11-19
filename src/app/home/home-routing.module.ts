@@ -8,17 +8,19 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { QuizOverviewComponent } from './quiz-overview/quiz-overview.component';
 
 
 const routes: Routes = [
   {
-    path:'sign-in',component:SigninComponent
+    path:'login',component:SigninComponent
   },
   {
-    path:'forgot-password',component:ForgotPasswordComponent
+    path:'forgot-pasword',component:ForgotPasswordComponent
   },
   {
-    path:'create-account',component:CreateAccountComponent
+    path:'register',component:CreateAccountComponent
   },
   {
     path:'update-user',component:UpdateUserComponent
@@ -33,7 +35,13 @@ const routes: Routes = [
     path:'quiz', component:QuizComponent
   },
   {
+    path:'quiz-report',component:DashboardComponent
+  },
+  {
     path:'quiz-details',component:QuizDetailsComponent
+  },
+  {
+    path:'quiz-overview',component:QuizOverviewComponent
   },
 ];
 

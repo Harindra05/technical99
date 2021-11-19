@@ -6,6 +6,8 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { QuizOverviewComponent } from './quiz-overview/quiz-overview.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     SigninComponent,
        ForgotPasswordComponent,
        CreateAccountComponent,
-       UpdateUserComponent
+       UpdateUserComponent,
+       DashboardComponent,
+       QuizOverviewComponent
   ],
   imports: [
     CommonModule,
