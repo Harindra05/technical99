@@ -42,6 +42,7 @@ import { ForgotPasswordComponent } from './home/forgot-password/forgot-password.
 import { CreateAccountComponent } from './home/create-account/create-account.component';
 import { UpdateUserComponent } from './home/update-user/update-user.component';
 import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexPlotOptions, ApexResponsive, ApexTitleSubtitle, ApexXAxis, ApexYAxis, NgApexchartsModule } from 'ng-apexcharts';
+import { SigninWithOtpComponent } from './home/signin-with-otp/signin-with-otp.component';
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
@@ -87,6 +88,7 @@ const routes: Routes = [
     QuizOverviewComponent,
     DashboardComponent,    
     SigninComponent,
+    SigninWithOtpComponent,
     ForgotPasswordComponent,
     CreateAccountComponent,
     UpdateUserComponent,

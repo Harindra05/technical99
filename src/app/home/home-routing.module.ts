@@ -10,11 +10,15 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuizOverviewComponent } from './quiz-overview/quiz-overview.component';
+import { SigninWithOtpComponent } from './signin-with-otp/signin-with-otp.component';
 
 
 const routes: Routes = [
   {
     path:'login',component:SigninComponent
+  },
+  {
+    path:'login-otp',component:SigninWithOtpComponent
   },
   {
     path:'forgot-pasword',component:ForgotPasswordComponent
