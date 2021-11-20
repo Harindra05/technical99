@@ -216,7 +216,14 @@
                         </div>
                         <hr>
                         <div class="graph text-center py-3">
-                            <img src="assets/images/graph2.png" class="img-fluid" alt="graph">
+                            <div class="d-flex align-items-center">
+                                <div id="chart2">
+                                    <apx-chart [series]="chartOptions1.series" [chart]="chartOptions1.chart" [dataLabels]="chartOptions1.dataLabels" [plotOptions]="chartOptions1.plotOptions" [yaxis]="chartOptions1.yaxis" [xaxis]="chartOptions1.xaxis" [fill]="chartOptions1.fill" [title]="chartOptions1.title"></apx-chart>
+                                </div>
+                                <div id="chart2">
+                                    <apx-chart [series]="chartOptions.series[0].data" [chart]="chartOptions.chart" [responsive]="chartOptions.responsive"></apx-chart>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="border pr-3" style="min-height: 100%;">

@@ -41,13 +41,23 @@ import { SigninComponent } from './home/signin/signin.component';
 import { ForgotPasswordComponent } from './home/forgot-password/forgot-password.component';
 import { CreateAccountComponent } from './home/create-account/create-account.component';
 import { UpdateUserComponent } from './home/update-user/update-user.component';
-import { ApexAxisChartSeries, ApexChart, ApexResponsive, ApexTitleSubtitle, ApexXAxis, NgApexchartsModule } from 'ng-apexcharts';
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexPlotOptions, ApexResponsive, ApexTitleSubtitle, ApexXAxis, ApexYAxis, NgApexchartsModule } from 'ng-apexcharts';
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   title: ApexTitleSubtitle;
   responsive: ApexResponsive[];
   labels: any;
+};
+export type ChartOptions1 = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  yaxis: ApexYAxis;
+  xaxis: ApexXAxis;
+  fill: ApexFill;
+  title: ApexTitleSubtitle;
 };
 const routes: Routes = [
   { path: '', component: HomeComponent },
