@@ -14,6 +14,7 @@ body {
 .text-poppy-red {
     color: #ef5350 !important;
 }
+
 .custom-radio {
     ul li {
         color: #000000;
@@ -143,47 +144,52 @@ body {
         font-weight: bold;
     }
 }
-.user-wrap{
+
+.user-wrap {
     width: 100%;
-    min-height: 100vh;
-    padding: 50px;
+    // min-height: 100vh;
+    padding: 10px;
     .user-login-box {
-        width: 570px;
+        width: 450px;
         margin: 0 auto;
-        padding: 40px;
+        padding: 20px 40px;
         border: 1px solid #ccc;
-        .form-control{
+        .form-control {
             min-height: 45px;
             border-color: #ccc;
             box-shadow: none !important;
         }
     }
-    label{
+    label {
         opacity: .5;
     }
     ul li .check {
         left: 0;
     }
-    ul li label{
+    ul li label {
         padding: 12px 10px 10px 30px;
-        font-size: 15px;
+        font-size: 10px;
     }
 }
-.custom-radio2  ul li .check {
+
+.custom-radio2 ul li .check {
     top: 10px;
 }
-.social-login{
-    .social-login-btn{
+
+.social-login {
+    .social-login-btn {
         width: 210px;
         cursor: pointer;
     }
 }
-.show-password{
+
+.show-password {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 }
+
 .div-row {
     .width-20 {
         flex: 0 0 20%;
@@ -216,9 +222,11 @@ body {
         border-color: #000;
     }
 }
-.bg-grey{
+
+.bg-grey {
     background-color: #e5e5e5;
 }
+
 .mat-tab-nav-bar,
 .mat-tab-header {
     border-bottom: none;
@@ -375,37 +383,39 @@ body {
         }
     }
 }
-.dashboard-sidebar{
+
+.dashboard-sidebar {
     &.sidebar .accordion {
         border: none;
         .card .card-header .btn-link {
-                padding: 15px 10px 15px 1.25rem;
-                background-color: transparent;
-                border-width: 0 0px 1px 0 !important;
-                .icon-collapse{
-                    border: none;
-                    width: 10px;
-                    height: 10px;
-                    border: 1px solid #888;
-                    position: absolute;
-                    right: 0;
-                    transform: rotate(45deg);
-                    border-width: 0 1px 1px 0;
-                }
-                &[aria-expanded="true"] {
-                    .icon-collapse{
-                        border-width:1px  0  0 1px;
-                    }
+            padding: 15px 10px 15px 1.25rem;
+            background-color: transparent;
+            border-width: 0 0px 1px 0 !important;
+            .icon-collapse {
+                border: none;
+                width: 10px;
+                height: 10px;
+                border: 1px solid #888;
+                position: absolute;
+                right: 15px;
+                transform: rotate(45deg);
+                border-width: 0 1px 1px 0;
+            }
+            &[aria-expanded="true"] {
+                .icon-collapse {
+                    border-width: 1px 0 0 1px;
                 }
             }
         }
-    .dotted-lines:after,.dotted-lines li:after{
+    }
+    .dotted-lines:after,
+    .dotted-lines li:after {
         display: none;
     }
 }
 
 .dashboard-sidebar.sidebar .accordion .card .card-header .btn-link .icon-collapse::after,
-.dashboard-sidebar.sidebar .accordion .card .card-header .btn-link .icon-collapse::before{
+.dashboard-sidebar.sidebar .accordion .card .card-header .btn-link .icon-collapse::before {
     display: none;
 }
 
@@ -826,6 +836,7 @@ div#editor {
         background-color: #d86417;
     }
 }
+
 .light-btn {
     background-color: #fdfdfd;
     border-radius: 5px !important;
@@ -835,9 +846,11 @@ div#editor {
         background-color: #868482;
     }
 }
-.f-12{
+
+.f-12 {
     font-size: 12px;
 }
+
 #startQuiz {
     font-weight: 400;
     .modal-title {
@@ -937,9 +950,8 @@ div#editor {
 //     color: #fff !important;
 //     background-color: #000 !important;
 // }
-.btn-orange{
+.btn-orange {
     background-color: #d86417;
 }
-.dashboard-main-contant{
-    
-}
+
+.dashboard-main-contant {}
