@@ -1,59 +1,79 @@
-
-.pcs:after { content: " pcs"; }
-.cur:before { content: "$"; }
-.per:after { content: "%"; }
-// fold table 
-table.fold-table {
-  > tbody {
-    // view segment
-    > tr.view {
-      td, th {cursor: pointer;}
-      td:last-child, 
-      th:last-child { 
-        position: relative;
-        padding-right:20px;
-        &:before {
-          position: absolute;
-          top:50%; 
-          right:5px;
-          width: 9px; height: 16px;
-          margin-top: -8px;
-          font: 20px fontawesome;
-          color: #999;
-          content: "\f0d7";
-          transition: all .3s ease;
-        }
-      }
-      &.open {
-        td:last-child, th:last-child {
-          &:before {
-            transform: rotate(-180deg);
-            color: #333;
-          }
-        }
-      }
-    }
-  
-    // fold segment
-    > tr.fold {
-      display: none;
-      &.open { display:table-row; }
-    }
-  }
+.pcs:after {
+    content: " pcs";
 }
 
+.cur:before {
+    content: "$";
+}
 
+.per:after {
+    content: "%";
+}
+
+// fold table 
+table.fold-table {
+    >tbody {
+        // view segment
+        >tr.view {
+            td,
+            th {
+                cursor: pointer;
+            }
+            td:last-child,
+            th:last-child {
+                position: relative;
+                padding-right: 20px;
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    right: 5px;
+                    width: 9px;
+                    height: 16px;
+                    margin-top: -8px;
+                    font: 20px fontawesome;
+                    color: #999;
+                    content: "\f0d7";
+                    transition: all .3s ease;
+                }
+            }
+            &.open {
+                td:last-child,
+                th:last-child {
+                    &:before {
+                        transform: rotate(-180deg);
+                        color: #333;
+                    }
+                }
+            }
+        }
+        // fold segment
+        >tr.fold {
+            display: none;
+            &.open {
+                display: table-row;
+            }
+        }
+    }
+}
 
 // fold content 
 .fold-content {
-  padding: .5em;
-  h3 { margin-top:0; }
-  > table {
-    border: 1px solid #ccc;
-    > tbody {
-      tr:nth-child(even) {
-        // background: #eee;
-      }
+    padding: .5em;
+    h3 {
+        margin-top: 0;
     }
-  }
+    >table {
+        border: 1px solid #ccc;
+        >tbody {
+            tr:nth-child(even) {
+                // background: #eee;
+            }
+        }
+    }
+}
+
+#chart {
+    max-width: 200px;
+    margin: 15px auto;
+    padding: 0;
 }
