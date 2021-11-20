@@ -35,6 +35,20 @@ import { ToastrModule } from 'ngx-toastr';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuizDetailsComponent } from './quiz/quiz-details/quiz-details.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { QuizOverviewComponent } from './home/quiz-overview/quiz-overview.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { SigninComponent } from './home/signin/signin.component';
+import { ForgotPasswordComponent } from './home/forgot-password/forgot-password.component';
+import { CreateAccountComponent } from './home/create-account/create-account.component';
+import { UpdateUserComponent } from './home/update-user/update-user.component';
+import { ApexAxisChartSeries, ApexChart, ApexResponsive, ApexTitleSubtitle, ApexXAxis, NgApexchartsModule } from 'ng-apexcharts';
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  title: ApexTitleSubtitle;
+  responsive: ApexResponsive[];
+  labels: any;
+};
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: ':lang', component: TutorialHomePageComponent },
@@ -59,12 +73,21 @@ const routes: Routes = [
     McqComponent,
     McqQuestionsComponent,
     QuizComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    QuizOverviewComponent,
+    DashboardComponent,    
+    SigninComponent,
+    ForgotPasswordComponent,
+    CreateAccountComponent,
+    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgApexchartsModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,

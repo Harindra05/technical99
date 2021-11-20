@@ -35,13 +35,13 @@ const routes: Routes = [
     path:'quiz', component:QuizComponent
   },
   {
-    path:'quiz-report',component:DashboardComponent
-  },
-  {
     path:'quiz-details',component:QuizDetailsComponent
   },
   {
     path:'quiz-overview',component:QuizOverviewComponent
+  },
+  {
+    path:'quiz-report',component:DashboardComponent
   },
 ];
 

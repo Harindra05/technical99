@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CodeModel } from '@ngstack/code-editor';
+import { ChartComponent } from 'ng-apexcharts';
 declare var $:any;
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ToastrService } from 'ngx-toastr';
+import { ChartOptions } from 'src/app/app.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +13,38 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-    constructor(private fb: FormBuilder, private toastr:ToastrService) { }
-    theme = 'vs';
-    isActive=true;
-    public form: FormGroup;
+  theme = 'vs';
+  @ViewChild("chart") chart: ChartComponent;
+  public chartOptions: Partial<ChartOptions>;
+  isActive=true;
+  public form: FormGroup;
+    constructor(private fb: FormBuilder, private toastr:ToastrService) {
+      this.chartOptions = {
+        series: [{
+          name: 'Desktops',
+          data: [10, 41, 35]
+        }],
+        chart: {
+          width: 300,
+          type: "pie"
+        },
+        labels: [],
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200
+              },
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
+        ]
+      };
+     }
+
     model: CodeModel = {
       language: 'java',
       uri: 'java',
@@ -132,7 +162,7 @@ export class DashboardComponent implements OnInit {
       minimap: {
         enabled: false
       }
-    };
+    }
     ngOnInit(): void {
       $('.show-footer').click(function() {
         $('.other-technology').toggleClass('show-more');
