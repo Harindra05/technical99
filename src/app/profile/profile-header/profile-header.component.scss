@@ -1,0 +1,43 @@
+.primary-header {
+    background-color: #E6E6E3;
+    height: 5rem;
+    .navbar {
+        height: 6rem;
+    }
+    .header-list {
+        padding: 0 1rem;
+        margin-top: 0.6rem;
+        .header-links {
+            display: grid !important;
+        }
+        .header-icon {
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        .header-cat-text {
+            text-align: center;
+            color: #545353;
+            font-size: 1.4rem;
+        }
+        .header-text {
+            text-align: center;
+            color: #797979;
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+        .header-button {
+            margin: .5rem;
+        }
+    }
+    .expert-advice {
+        margin-top: 1rem;
+        .expert-advice-icon {
+            font-size: 2rem;
+        }
+    }
+    .dropdown-item {
+        padding: 0.5rem 3rem;
+        font-size: 1.33rem;
+        font-weight: 400;
+    }
+}

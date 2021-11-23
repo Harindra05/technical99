@@ -43,6 +43,8 @@ import { CreateAccountComponent } from './home/create-account/create-account.com
 import { UpdateUserComponent } from './home/update-user/update-user.component';
 import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexPlotOptions, ApexResponsive, ApexTitleSubtitle, ApexXAxis, ApexYAxis, NgApexchartsModule } from 'ng-apexcharts';
 import { SigninWithOtpComponent } from './home/signin-with-otp/signin-with-otp.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ProfileHeaderComponent } from './profile/profile-header/profile-header.component';
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
@@ -60,13 +62,6 @@ export type ChartOptions1 = {
   fill: ApexFill;
   title: ApexTitleSubtitle;
 };
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: ':lang', component: TutorialHomePageComponent },
-  { path: ':lang/tutorial', component: TutorialMainComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
-]
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +87,7 @@ const routes: Routes = [
     ForgotPasswordComponent,
     CreateAccountComponent,
     UpdateUserComponent,
+    ProfileHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,7 +114,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule, 
     MatExpansionModule,
     CodeEditorModule.forRoot(),
     ReactiveFormsModule,
