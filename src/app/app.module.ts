@@ -10,7 +10,7 @@ import { PrimaryHeaderComponent } from './SharedComponents/primary-header/primar
 import { SecondaryHeaderComponent } from './SharedComponents/secondary-header/secondary-header.component';
 import { HeroImageComponent } from './home/hero-image/hero-image.component';
 import { TrendingCoursesComponent } from './home/trending-courses/trending-courses.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import {MatTabsModule, MAT_TABS_CONFIG} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { TutorialComponent } from './SharedComponents/tutorial/tutorial.component';
 import { HomeComponent } from './home/home.component';
@@ -121,7 +121,7 @@ export type ChartOptions1 = {
     NgxStarRatingModule,
     ToastrModule.forRoot(),
   ],
-  providers: [ApiService],
+  providers: [ApiService,{ provide: MAT_TABS_CONFIG, useValue: { animationDuration: '0ms' } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CodeModel } from '@ngstack/code-editor';
 declare var $:any;
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class QuizDetailsComponent implements OnInit {
 
-    constructor(private fb: FormBuilder, private toastr:ToastrService) { }
+    constructor(private fb: FormBuilder, private toastr:ToastrService,@Inject(DOCUMENT) private document: any) { }
     theme = 'vs';
     isActive=true;
     questionCount :Array<any>=[
@@ -169,7 +170,16 @@ export class QuizDetailsComponent implements OnInit {
       ratings: [5, Validators.required],
     })
     this.startTimer();
+    this.fullScreen();
     }
+    fullScreen() {
+      let elem:any = document.documentElement;
+      let methodToBeInvoked = elem.requestFullscreen ||
+        elem.webkitRequestFullScreen || elem['mozRequestFullscreen']
+        ||
+        elem['msRequestFullscreen'];
+      if (methodToBeInvoked) methodToBeInvoked.call(elem);
+  }
     onCodeChanged(value) {
       console.log('CODE', value);
     }
@@ -210,6 +220,5 @@ startTimer() {
          }, 1000);  
 
   }
-
   }
   

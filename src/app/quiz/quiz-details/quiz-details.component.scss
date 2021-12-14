@@ -30,8 +30,6 @@
     cursor: pointer;
 }
 
-
-
 .submit-btn {
     background-color: #2d75b5 !important;
 }
@@ -39,18 +37,18 @@
 .bg-grey.px-4.py-2.mt-2.mb-2 {
     border: 1px solid #f3f3f3;
     background: #fcfcfc;
-    padding: 15px !important;
+    padding: 10px !important;
 }
 
 .bg-grey.mx-3.py-2.mt-2.mb-2.d-flex.justify-content-between {
     border: 1px solid #f3f3f3;
     background: #fcfcfc;
-    padding: 15px !important;
+    padding: 10px !important;
 }
 
 .fa-bookmark:before {
     content: "";
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .text-green {
@@ -66,8 +64,8 @@
 }
 
 .table-content .table-head {
-    background-color: #f1f1f121 !important;
-    border: 1px solid #0000000a !important;
+    background-color: #f1f1f160 !important;
+    // border: 1px solid #0000000a !important;
 }
 
 .sidebar .accordion {
@@ -78,9 +76,10 @@
     border: 1px solid #0000001a;
     // backgound-color:red;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
     cursor: pointer;
+    font-size: 13px;
 }
 
 .red-color {
@@ -91,4 +90,35 @@
 .blue-color {
     background-color: blue;
     color: #fff;
+}
+
+.sidebar .accordion .card .card-header {
+    padding: 0;
+    background-color: #fafafa;
+    border-radius: 0;
+}
+
+.custom-radio ul li label {
+    display: block;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 5px 14px 12px 49px;
+    margin: 7px auto;
+    height: 17px;
+    z-index: 9;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+}
+
+.card {
+    background-color: #fafafa;
+}
+
+.table-content .table-head {
+    padding: 5px;
+}
+
+.card-body {
+    padding: .7rem;
 }
