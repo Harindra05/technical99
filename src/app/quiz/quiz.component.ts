@@ -17,6 +17,68 @@ export class QuizComponent implements OnInit {
     show:boolean=false;
     showFilter:boolean=false;
     public form: FormGroup;
+    public quizList:Array<any>=[
+      {
+          "quizId": 6,
+          "langId": 1,
+          "quizCode": "Q4589",
+          "title": "Hibernate Practice Quiz-Set-I-Q1986",
+          "complexity": "Beginner",
+          "status": "Live",
+          "attendees": 0,
+          "maxNoq": 200,
+          "easyNoq": 50,
+          "mediumNoq": 100,
+          "hardNoq": 150,
+          "maxMarks": null,
+          "minMarks": 30,
+          "negMarks": 0.0,
+          "maxTime": 120,
+          "rating": 0,
+          "ratingCount": 0,
+          "publishedDate": "2021-12-08"
+      },
+      {
+          "quizId": 2,
+          "langId": 1,
+          "quizCode": "JAQ-002",
+          "title": "Core Java Practice Quiz Set-I, JAQ-002",
+          "complexity": "Medium",
+          "status": "Live",
+          "attendees": 0,
+          "maxNoq": 30,
+          "easyNoq": 10,
+          "mediumNoq": 15,
+          "hardNoq": 5,
+          "maxMarks": null,
+          "minMarks": 60,
+          "negMarks": 0.0,
+          "maxTime": 45,
+          "rating": 5,
+          "ratingCount": 212,
+          "publishedDate": "2019-12-05"
+      },
+      {
+          "quizId": 7,
+          "langId": 1,
+          "quizCode": "Q2345",
+          "title": "Diagrammatic Reasoning ",
+          "complexity": "Beginner",
+          "status": "Live",
+          "attendees": 0,
+          "maxNoq": 1,
+          "easyNoq": 50,
+          "mediumNoq": 100,
+          "hardNoq": 100,
+          "maxMarks": null,
+          "minMarks": 45,
+          "negMarks": 0.0,
+          "maxTime": 1,
+          "rating": 0,
+          "ratingCount": 0,
+          "publishedDate": "2019-02-20"
+      }
+  ]
     model: CodeModel = {
       language: 'java',
       uri: 'java',

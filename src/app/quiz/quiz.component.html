@@ -170,29 +170,30 @@
                 <div class="quiz-content p-3">
                     <div class="table-head pt-3 pl-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="f-18"> Quiz – Core Java (165) </span>
+                            <span class="f-18"> Quiz – Core Java ({{quizList.length}}) </span>
                         </div>
                     </div>
                     <hr>
-                    <div class="quiz-list m-3">
+                    <div class="quiz-list m-3" *ngFor="let quiz of quizList; let i=index">
                         <div class="d-flex justify-content-between align-items-start">
                             <div>
                                 <div class="quiz-list-head mb-2">
-                                    Core Java Practice Quiz Set-I, JAQ-002
+                                    {{quiz.title}}
                                 </div>
-                                <p class="mb-0">ID: 02 | Experts | 3.1 k Attendees | Published : 23 Feb, 2021
+                                <p class="mb-0">ID: {{quiz.quizId}} | {{quiz.complexity}} | {{quiz.attendees}} Attendees | Published : {{quiz.publishedDate}}
                                 </p>
                             </div>
                             <div class="stars-rating d-flex align-items-center">
                                 <form [formGroup]="form">
                                     <div class="cont mr-2">
                                         <div class="stars">
-                                            <ngx-star-rating formControlName="rating2" [id]="'rating2'">
+                                            <ngx-star-rating [id]="quiz.rating">
+
                                             </ngx-star-rating>
                                         </div>
                                     </div>
                                 </form>
-                                <span><b>4.2(2.3k)</b></span>
+                                <span><b>{{quiz.rating}}</b></span>
                             </div>
                         </div>
                         <div class="tabs-content mt-4">
@@ -208,20 +209,20 @@
                                     <div class="row table-row-wrap">
                                         <div class="col-md-4">
                                             <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>NOQ </span> : <b>&nbsp; 30</b></li>
-                                                <li class="py-2"><span>Easy</span> : &nbsp; 10 (30%) </li>
-                                                <li class="py-2"><span>Average</span> : &nbsp; 15 (50%)</li>
-                                                <li class="py-2"><span>Hard </span> : &nbsp; 5 (20%)</li>
+                                                <li class="py-2 mb-1"><span>NOQ </span> : <b>&nbsp; {{quiz.maxNoq}}</b></li>
+                                                <li class="py-2"><span>Easy</span> : &nbsp; {{quiz.easyNoq}}</li>
+                                                <li class="py-2"><span>Average</span> : &nbsp; {{quiz.mediumNoq}} </li>
+                                                <li class="py-2"><span>Hard </span> : &nbsp; {{quiz.hardNoq}}</li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
                                             <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>Max Time </span> : <b>&nbsp; 45 Mins</b>
+                                                <li class="py-2 mb-1"><span>Max Time </span> : <b>&nbsp; {{quiz.maxTime}}</b>
                                                 </li>
-                                                <li class="py-2"><span>Max Marks </span> : &nbsp; 30 </li>
-                                                <li class="py-2"><span>Min Marks</span> : &nbsp; 22 (60%)</li>
+                                                <li class="py-2"><span>Max Marks </span> : &nbsp; {{quiz.maxMarks?quiz.maxMarks:0}} </li>
+                                                <li class="py-2"><span>Min Marks</span> : &nbsp; {{quiz.minMarks}}</li>
                                                 <li class="py-2"><span>Negative Marking </span> : &nbsp;
-                                                    <div class="text-success d-inline">ON</div>
+                                                    <div class="text-success d-inline">{{quiz.negMarks=="0"?'NO':quiz.negMarks}}</div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -249,155 +250,6 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="quiz-list m-3 mt-3">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <div class="quiz-list-head mb-2">
-                                    Core Java Practice Quiz Set-I, JAQ-002
-                                </div>
-                                <p class="mb-0">ID: 02 | Experts | 3.1 k Attendees | Published : 23 Feb, 2021
-                                </p>
-                            </div>
-                            <div class="stars-rating d-flex align-items-center">
-                                <form [formGroup]="form">
-                                    <div class="cont mr-2">
-                                        <div class="stars">
-                                            <ngx-star-rating formControlName="rating2" [id]="'rating2'">
-                                            </ngx-star-rating>
-                                        </div>
-                                    </div>
-                                </form>
-                                <span><b>4.2(2.3k)</b></span>
-                            </div>
-                        </div>
-                        <div class="tabs-content mt-4">
-                            <button class="btn btn-success start-btn py-2 px-5 w-auto" data-toggle="modal" data-target="#startQuiz">Start</button>
-                            <div class="lisk-share">
-                                <div class="d-flex text-right">
-                                    <img class="social-icons mr-3" src="assets/images/bookmark.png" alt="">
-                                    <img class="social-icons" data-toggle="modal" data-target="#shareContest" src="assets/images/share.png" alt="">
-                                </div>
-                            </div>
-                            <mat-tab-group (click)="showData()">
-                                <mat-tab label="View Details">
-                                    <div class="row table-row-wrap">
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>NOQ </span> : <b>&nbsp; 30</b></li>
-                                                <li class="py-2"><span>Easy</span> : &nbsp; 10 (30%) </li>
-                                                <li class="py-2"><span>Average</span> : &nbsp; 15 (50%)</li>
-                                                <li class="py-2"><span>Hard </span> : &nbsp; 5 (20%)</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>Max Time </span> : <b>&nbsp; 45 Mins</b>
-                                                </li>
-                                                <li class="py-2"><span>Max Marks </span> : &nbsp; 30 </li>
-                                                <li class="py-2"><span>Min Marks</span> : &nbsp; 22 (60%)</li>
-                                                <li class="py-2"><span>Negative Marking </span> : &nbsp;
-                                                    <div class="text-success d-inline">ON</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1">Java Modules</li>
-                                                <li class="py-2">
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">Core
-                                                        Java</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">JSP</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">WebServices</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">Spring</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </mat-tab>
-                                <mat-tab label="History">
-                                    <img class="img-fluid" src="assets/images/grap.png" alt="grap">
-                                    <div class="text-center">
-                                        <button class="btn  text-center dark-btn py-2 px-5">Load More</button>
-                                    </div>
-                                </mat-tab>
-                            </mat-tab-group>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="quiz-list m-3 mt-3">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <div class="quiz-list-head mb-2">
-                                    Core Java Practice Quiz Set-I, JAQ-002
-                                </div>
-                                <p class="mb-0">ID: 02 | Experts | 3.1 k Attendees | Published : 23 Feb, 2021
-                                </p>
-                            </div>
-                            <div class="stars-rating d-flex align-items-center">
-                                <form [formGroup]="form">
-                                    <div class="cont mr-2">
-                                        <div class="stars">
-                                            <ngx-star-rating formControlName="rating2" [id]="'rating2'">
-                                            </ngx-star-rating>
-                                        </div>
-                                    </div>
-                                </form>
-                                <span><b>4.2(2.3k)</b></span>
-                            </div>
-                        </div>
-                        <div class="tabs-content mt-4">
-                            <button class="btn btn-success start-btn py-2 px-5 w-auto" data-toggle="modal" data-target="#startQuiz">Start</button>
-                            <div class="lisk-share">
-                                <div class="d-flex text-right">
-                                    <img class="social-icons mr-3" src="assets/images/bookmark.png" alt="">
-                                    <img class="social-icons" data-toggle="modal" data-target="#shareContest" src="assets/images/share.png" alt="">
-                                </div>
-                            </div>
-                            <mat-tab-group (click)="showData()">
-                                <mat-tab label="View Details">
-                                    <div class="row table-row-wrap">
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>NOQ </span> : <b>&nbsp; 30</b></li>
-                                                <li class="py-2"><span>Easy</span> : &nbsp; 10 (30%) </li>
-                                                <li class="py-2"><span>Average</span> : &nbsp; 15 (50%)</li>
-                                                <li class="py-2"><span>Hard </span> : &nbsp; 5 (20%)</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1"><span>Max Time </span> : <b>&nbsp; 45 Mins</b>
-                                                </li>
-                                                <li class="py-2"><span>Max Marks </span> : &nbsp; 30 </li>
-                                                <li class="py-2"><span>Min Marks</span> : &nbsp; 22 (60%)</li>
-                                                <li class="py-2"><span>Negative Marking </span> : &nbsp;
-                                                    <div class="text-success d-inline">ON</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <ul class="mb-0 list-unstyled">
-                                                <li class="py-2 mb-1">Java Modules</li>
-                                                <li class="py-2">
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">Core
-                                                        Java</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">JSP</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">WebServices</span>
-                                                    <span class="modules-tag m-1 py-1 px-2 d-inline-block">Spring</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </mat-tab>
-                                <mat-tab label="History">
-                                    <img class="img-fluid" src="assets/images/grap.png" alt="grap">
-                                    <div class="text-center">
-                                        <button class="btn  text-center dark-btn py-2 px-5">Load More</button>
-                                    </div>
-                                </mat-tab>
-                            </mat-tab-group>
-                        </div>
-                    </div>
                 </div>
                 <!-- <div class="middle-contant mt-5">
            
