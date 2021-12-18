@@ -184,16 +184,13 @@
                                 </p>
                             </div>
                             <div class="stars-rating d-flex align-items-center">
-                                <form [formGroup]="form">
-                                    <div class="cont mr-2">
-                                        <div class="stars">
-                                            <ngx-star-rating [id]="quiz.rating">
-
-                                            </ngx-star-rating>
-                                        </div>
+                                <div class="cont mr-2">
+                                    <div class="stars">
+                                        <ngx-star-rating [(ngModel)]="quiz.rating" [id]="'quiz.rating'" [disabled]="true">
+                                        </ngx-star-rating>
                                     </div>
-                                </form>
-                                <span><b>{{quiz.rating}}</b></span>
+                                </div>
+                                <span><b>{{quiz.rating}} ({{quiz.ratingCount}})</b></span>
                             </div>
                         </div>
                         <div class="tabs-content mt-4">

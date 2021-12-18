@@ -4,15 +4,14 @@ import { CodeModel } from '@ngstack/code-editor';
 declare var $:any;
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ToastrService } from 'ngx-toastr';
+import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-
-
-    constructor(private fb: FormBuilder, private toastr:ToastrService) { }
+    constructor(private fb: FormBuilder, private toastr:ToastrService,private api:ApiService) { }
     theme = 'vs';
     show:boolean=false;
     showFilter:boolean=false;
@@ -197,15 +196,16 @@ export class QuizComponent implements OnInit {
         enabled: false
       }
     };
-    ngOnInit(): void {
+    async ngOnInit() {
       $('.show-footer').click(function() {
         $('.other-technology').toggleClass('show-more');
     });
     $('.mat-tab-body-wrapper').hide();
     this.form = this.fb.group({
-      rating2: [5],
+      rating2: [3],
       ratings: [5, Validators.required],
     })
+    await this.getQuizList()
     }
     onCodeChanged(value) {
       console.log('CODE', value);
@@ -225,6 +225,16 @@ export class QuizComponent implements OnInit {
         }
       else {
         // await this.copyInputMessage(a);
+      }
+   
+    }
+    async getQuizList(){
+      try {
+        let data= await this.api.get('quiz/list/1')
+        console.log(data);
+        
+      } catch (error) {
+        console.error(error)
       }
     }
     async copyCode(a){

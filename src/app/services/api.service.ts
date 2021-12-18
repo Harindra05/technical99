@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ApiService {
-    public endpoint = environment.api_url
+    public endpoint = environment.api_test_url
 
   public httpOptions = {
     headers: new HttpHeaders({
