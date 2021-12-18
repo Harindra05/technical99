@@ -190,7 +190,7 @@
                                         </ngx-star-rating>
                                     </div>
                                 </div>
-                                <span><b>{{quiz.rating}} ({{quiz.ratingCount}})</b></span>
+                                <span><b>{{quiz.rating}} ({{quiz.ratingCount | shortNumber}})</b></span>
                             </div>
                         </div>
                         <div class="tabs-content mt-4">
@@ -201,9 +201,10 @@
                                     <img class="social-icons" data-toggle="modal" data-target="#shareContest" src="assets/images/share.png" alt="">
                                 </div>
                             </div>
-                            <mat-tab-group (click)="showData()">
+                            <mat-tab-group [selectedIndex]="null">
+                                <mat-tab></mat-tab>
                                 <mat-tab label="View Details">
-                                    <div class="row table-row-wrap">
+                                    <div class="row table-row-wrap m-1">
                                         <div class="col-md-4">
                                             <ul class="mb-0 list-unstyled">
                                                 <li class="py-2 mb-1"><span>NOQ </span> : <b>&nbsp; {{quiz.maxNoq}}</b></li>
@@ -245,8 +246,9 @@
                                 </mat-tab>
                             </mat-tab-group>
                         </div>
+                        <hr>
                     </div>
-                    <hr>
+
                 </div>
                 <!-- <div class="middle-contant mt-5">
            

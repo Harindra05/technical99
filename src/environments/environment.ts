@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api_url:'http://64.227.185.247:9090/',
-  api_test_url:'http://64.227.185.247:9091/'
+  api_test_url:'http://85.208.51.18:9091/'
 };
 
 /*

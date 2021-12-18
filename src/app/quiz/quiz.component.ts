@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CodeModel } from '@ngstack/code-editor';
 declare var $:any;
@@ -12,72 +12,12 @@ import { ApiService } from '../services/api.service';
 })
 export class QuizComponent implements OnInit {
     constructor(private fb: FormBuilder, private toastr:ToastrService,private api:ApiService) { }
+    @Input()selectedIndex: number=null
     theme = 'vs';
     show:boolean=false;
     showFilter:boolean=false;
     public form: FormGroup;
-    public quizList:Array<any>=[
-      {
-          "quizId": 6,
-          "langId": 1,
-          "quizCode": "Q4589",
-          "title": "Hibernate Practice Quiz-Set-I-Q1986",
-          "complexity": "Beginner",
-          "status": "Live",
-          "attendees": 0,
-          "maxNoq": 200,
-          "easyNoq": 50,
-          "mediumNoq": 100,
-          "hardNoq": 150,
-          "maxMarks": null,
-          "minMarks": 30,
-          "negMarks": 0.0,
-          "maxTime": 120,
-          "rating": 0,
-          "ratingCount": 0,
-          "publishedDate": "2021-12-08"
-      },
-      {
-          "quizId": 2,
-          "langId": 1,
-          "quizCode": "JAQ-002",
-          "title": "Core Java Practice Quiz Set-I, JAQ-002",
-          "complexity": "Medium",
-          "status": "Live",
-          "attendees": 0,
-          "maxNoq": 30,
-          "easyNoq": 10,
-          "mediumNoq": 15,
-          "hardNoq": 5,
-          "maxMarks": null,
-          "minMarks": 60,
-          "negMarks": 0.0,
-          "maxTime": 45,
-          "rating": 5,
-          "ratingCount": 212,
-          "publishedDate": "2019-12-05"
-      },
-      {
-          "quizId": 7,
-          "langId": 1,
-          "quizCode": "Q2345",
-          "title": "Diagrammatic Reasoning ",
-          "complexity": "Beginner",
-          "status": "Live",
-          "attendees": 0,
-          "maxNoq": 1,
-          "easyNoq": 50,
-          "mediumNoq": 100,
-          "hardNoq": 100,
-          "maxMarks": null,
-          "minMarks": 45,
-          "negMarks": 0.0,
-          "maxTime": 1,
-          "rating": 0,
-          "ratingCount": 0,
-          "publishedDate": "2019-02-20"
-      }
-  ]
+    public quizList:Array<any>=[]
     model: CodeModel = {
       language: 'java',
       uri: 'java',
@@ -200,12 +140,12 @@ export class QuizComponent implements OnInit {
       $('.show-footer').click(function() {
         $('.other-technology').toggleClass('show-more');
     });
-    $('.mat-tab-body-wrapper').hide();
+    // $('.mat-tab-body-wrapper').hide();
     this.form = this.fb.group({
       rating2: [3],
       ratings: [5, Validators.required],
     })
-    await this.getQuizList()
+    await this.getQuizList();
     }
     onCodeChanged(value) {
       console.log('CODE', value);
@@ -232,10 +172,11 @@ export class QuizComponent implements OnInit {
       try {
         let data= await this.api.get('quiz/list/1')
         console.log(data);
-        
+        this.quizList=data;
       } catch (error) {
         console.error(error)
       }
+      
     }
     async copyCode(a){
       // this.model1.value;
@@ -250,9 +191,9 @@ export class QuizComponent implements OnInit {
       alert("Press " + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ?  'Command/Cmd' : 'CTRL') + "+D to bookmark page.");
       return;
    };
-   showData(){
-    $('.mat-tab-body-wrapper').show();
-   }
+  //  showData(){
+  //   $('.mat-tab-body-wrapper').show();
+  //  }
    showFilterData(){
      this.showFilter = !this.showFilter;
    }

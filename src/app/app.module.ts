@@ -45,6 +45,7 @@ import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexPlotOptio
 import { SigninWithOtpComponent } from './home/signin-with-otp/signin-with-otp.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileHeaderComponent } from './profile/profile-header/profile-header.component';
+import { ShortNumberPipe } from './pipes/numberPipe';
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
@@ -88,6 +89,7 @@ export type ChartOptions1 = {
     CreateAccountComponent,
     UpdateUserComponent,
     ProfileHeaderComponent,
+    ShortNumberPipe
   ],
   imports: [
     BrowserModule,
