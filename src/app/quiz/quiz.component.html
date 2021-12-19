@@ -11,7 +11,7 @@
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left">
-                                        <h4 class="mb-0"> <b><img src="assets/images/java.png" class="java-icon" alt=""
+                                        <h4 class="mb-0"> <b><img src="http://technical99.com/images/lang/java.svg" class="java-icon" alt=""
                                                     width="25">
                                                 Java</b></h4>
                                     </button>
@@ -19,44 +19,15 @@
                             </div>
                             <div class="card-body">
                                 <div class="accordion" id="accordionExample01">
-                                    <div class="card">
+                                    <div class="card" *ngFor="let side of sideBar; let i=index">
                                         <div class="card-header" id="headingOne01">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left ml-3 f-17" aria-expanded="true" type="button"> Java (203) </button>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne01">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left ml-3 f-17" type="button"> Test (1) </button>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne01">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left ml-3 f-17" type="button"> Java Data (532) </button>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne01">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left ml-3 f-17" type="button"> Web Services (532) </button>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne01">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link btn-block text-left ml-3 f-17" type="button"> Web Services (532) </button>
+                                                <button class="btn btn-link btn-block text-left ml-3 f-17" (click)="getQuizList(side.id)" type="button"> {{side.techName}} ({{side.mcqCount}}) </button>
                                             </h2>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- </div> -->
                         </div>
                     </div>
                     <div class="accordion" id="accordionExample">
@@ -239,9 +210,11 @@
                                     </div>
                                 </mat-tab>
                                 <mat-tab label="History">
-                                    <img class="img-fluid" src="assets/images/grap.png" alt="grap">
-                                    <div class="text-center">
-                                        <button class="btn  text-center dark-btn py-2 px-5">Load More</button>
+                                    <div class="mat-tab-first-div">
+                                        <img class="img-fluid" src="assets/images/grap.png" alt="grap">
+                                        <div class="text-center">
+                                            <button class="btn  text-center dark-btn py-2 px-5">Load More</button>
+                                        </div>
                                     </div>
                                 </mat-tab>
                             </mat-tab-group>

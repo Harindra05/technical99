@@ -5,19 +5,22 @@ declare var $:any;
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../services/api.service';
+import { CommonService } from '../services/common.service';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-    constructor(private fb: FormBuilder, private toastr:ToastrService,private api:ApiService) { }
+    constructor(private fb: FormBuilder, private toastr:ToastrService,private api:ApiService,private common:CommonService) { }
     @Input()selectedIndex: number=null
     theme = 'vs';
     show:boolean=false;
     showFilter:boolean=false;
     public form: FormGroup;
-    public quizList:Array<any>=[]
+    public quizList:Array<any>=[];
+    public sideBar:Array<any>=[];
+    showData:boolean=true;
     model: CodeModel = {
       language: 'java',
       uri: 'java',
@@ -145,7 +148,8 @@ export class QuizComponent implements OnInit {
       rating2: [3],
       ratings: [5, Validators.required],
     })
-    await this.getQuizList();
+    await this.getQuizList(1);
+    await this.sideHeader();
     }
     onCodeChanged(value) {
       console.log('CODE', value);
@@ -168,11 +172,21 @@ export class QuizComponent implements OnInit {
       }
    
     }
-    async getQuizList(){
+    async getQuizList(id){
       try {
-        let data= await this.api.get('quiz/list/1')
+        let data= await this.api.get('quiz/list/'+id)
         console.log(data);
         this.quizList=data;
+      } catch (error) {
+        console.error(error)
+      }
+      
+    }
+    async sideHeader(){
+      try {
+        let data= await this.common.get('common/technology/1')
+        console.log(data);
+        this.sideBar=data;
       } catch (error) {
         console.error(error)
       }
@@ -191,10 +205,7 @@ export class QuizComponent implements OnInit {
       alert("Press " + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ?  'Command/Cmd' : 'CTRL') + "+D to bookmark page.");
       return;
    };
-  //  showData(){
-  //   $('.mat-tab-body-wrapper').show();
-  //  }
    showFilterData(){
      this.showFilter = !this.showFilter;
-   }
-  }
+   }  
+}

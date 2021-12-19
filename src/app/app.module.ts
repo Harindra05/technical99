@@ -46,6 +46,7 @@ import { SigninWithOtpComponent } from './home/signin-with-otp/signin-with-otp.c
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileHeaderComponent } from './profile/profile-header/profile-header.component';
 import { ShortNumberPipe } from './pipes/numberPipe';
+import { CommonService } from './services/common.service';
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
@@ -123,7 +124,7 @@ export type ChartOptions1 = {
     NgxStarRatingModule,
     ToastrModule.forRoot(),
   ],
-  providers: [ApiService,{ provide: MAT_TABS_CONFIG, useValue: { animationDuration: '0ms' } }],
+  providers: [ApiService,CommonService,{ provide: MAT_TABS_CONFIG, useValue: { animationDuration: '0ms' } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
